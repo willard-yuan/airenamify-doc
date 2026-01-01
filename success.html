@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - AI Renamify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .success-icon {
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="h-screen flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center">
+        <!-- Icon -->
+        <div class="flex justify-center mb-6">
+            <div class="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center success-icon">
+                <svg class="h-10 w-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">感谢您的订阅！</h1>
+        <p class="text-gray-500 mb-8">您的充值已成功。正在带您返回应用...</p>
+
+        <!-- Spinner -->
+        <div class="flex justify-center mb-6">
+            <svg class="animate-spin h-6 w-6 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+
+        <!-- Manual Button -->
+        <a id="return-btn" href="#" class="inline-block w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200">
+            返回 AI Renamify
+        </a>
+
+        <p class="mt-4 text-sm text-gray-400">
+            如果应用没有自动打开，请点击上方按钮。
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Extract session_id from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+
+            // 2. Construct Deep Link
+            // Default to app homepage if no session_id (just in case)
+            let deepLink = 'airenamify://success';
+            if (sessionId) {
+                deepLink += `?session_id=${sessionId}`;
+            }
+
+            // Update button href
+            const btn = document.getElementById('return-btn');
+            btn.href = deepLink;
+
+            // 3. Auto Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = deepLink;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
