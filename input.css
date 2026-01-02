@@ -2,40 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    h3 {
-        @apply font-bold text-4xl w-full mb-8 text-darkGrayishBlue md:text-5xl;
-    }
-    h5 {
-        @apply font-bold text-2xl w-full text-darkGrayishBlue;
-    }
-    p {
-        @apply leading-9 max-w-3xl mb-2 text-grayishBlue mx-auto;
-    }
-}
-
-@layer components {
-    .download-btn {
-        @apply rounded-full px-8 py-4 transition duration-200 hover:bg-opacity-80;
-    }
-}
-
-.section-container {
-    @apply max-w-6xl text-center mx-auto px-10;
-}
-
-.ficon:hover {
-    filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(101%) contrast(94%);
-}
-
-body {
-    background-image: url("/images/bg-header-mobile.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-@media screen(sm) {
-    body {
-        background-image: url("/images/bg-header-desktop.png");
-    }
+html {
+  scroll-behavior: smooth;
 }

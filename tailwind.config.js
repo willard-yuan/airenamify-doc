@@ -14,9 +14,11 @@ module.exports = {
                 lightBlue: "hsl(233, 100%, 69%)",
                 darkGrayishBlue: "hsl(210, 10%, 33%)",
                 grayishBlue: "hsl(201, 11%, 66%)",
+                brandBlue: "#3b82f6",
+                brandGreen: "#2ecc71",
             },
             fontFamily: {
-                sans: ["Bai Jamjuree", "sans-serif"],
+                sans: ["Inter", "sans-serif"],
             },
         },
     },
