@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply antialiased text-text-main bg-background;
+  }
 }

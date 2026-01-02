@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful - AiRenamify</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+    <title>Payment Successful - AI Renamify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        success: '#2ecc71',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
         .success-icon {
             animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
@@ -19,38 +35,41 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-900 bg-gray-50 h-screen flex items-center justify-center antialiased selection:bg-brandBlue selection:text-white">
+<body class="h-screen flex items-center justify-center">
 
     <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center border border-gray-100">
         <!-- Icon -->
         <div class="flex justify-center mb-6">
-            <div class="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center success-icon">
-                <svg class="h-10 w-10 text-brandGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="h-20 w-20 bg-green-50 rounded-full flex items-center justify-center success-icon text-success">
+                <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                 </svg>
             </div>
         </div>
 
         <!-- Title -->
-        <h1 class="text-2xl font-bold text-gray-900 mb-2">Thank you for subscribing!</h1>
-        <p class="text-gray-500 mb-8">Your payment was successful. Redirecting you back to the app...</p>
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">感谢您的订阅！</h1>
+        <p class="text-gray-500 mb-8">您的充值已成功。正在带您返回应用...</p>
 
         <!-- Spinner -->
         <div class="flex justify-center mb-6">
-            <svg class="animate-spin h-6 w-6 text-brandBlue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
         </div>
 
         <!-- Manual Button -->
-        <a id="return-btn" href="#" class="inline-block w-full bg-brandBlue hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-200 shadow-sm hover:shadow-md">
-            Return to AiRenamify
+        <a id="return-btn" href="#" class="inline-block w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg">
+            返回 AI Renamify
         </a>
+        
+        <script>
+            // Simulate redirect delay
+            setTimeout(() => {
+                // window.location.href = 'airenamify://callback'; // Example scheme
+            }, 3000);
+        </script>
     </div>
-
-    <script>
-        // Optional: Add auto-redirect logic here if needed
-    </script>
 </body>
 </html>
