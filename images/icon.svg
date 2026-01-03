@@ -1,1 +1,8 @@
-<svg fill="none" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m130 380 126-220 126 220" stroke="#4eafa0" stroke-linecap="round" stroke-linejoin="round" stroke-width="100"/><path d="m256 260q-50-80-50-100a50 50 0 1 1 100 0q0 20-50 100z" fill="#f49e95"/></svg>
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" stroke-linejoin="round" stroke-linecap="round" stroke-width="280" stroke="#4EAFA0" d="m260,673.33334l249,-345l255,345"/>
+  <path id="svg_2" fill="#F49E95" d="m510,563.33334c-86.667,-134.4 -130,-218.4 -130,-252c0,-33.417 13.696,-65.466 38.076,-89.095c24.38,-23.63 57.446,-36.905 91.924,-36.905c34.478,0 67.544,13.275 91.924,36.905c24.38,23.629 38.076,55.678 38.076,89.095c0,33.6 -43.333,117.6 -130,252z"/>
+ </g>
+</svg>
