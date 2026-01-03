@@ -3,395 +3,228 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AiRenamify - Organization via Intelligence</title>
+    <title>AiRenamify - Rename Your Files with AI</title>
     <link rel="stylesheet" href="css/style.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/png">
     
     <style>
         /* Glassmorphism */
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
         
-        /* Scanning Beam Animation */
-        .scan-beam {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
-            animation: scan 3s infinite ease-in-out;
-            opacity: 0.8;
-            box-shadow: 0 0 10px #3b82f6;
-        }
-        
-        @keyframes scan {
-            0% { top: 10%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 90%; opacity: 0; }
-        }
-
-        /* 3D Tilt Effect Simulation for Hero Image */
-        .hero-tilt {
-            transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
-            transition: transform 0.5s ease;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        .hero-tilt:hover {
-            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-        }
-
-        /* Floating Animation */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-
+        /* Custom Animations */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        /* 3D Tilt Effect Container */
+        .perspective-container {
+            perspective: 1000px;
+        }
+        
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
     </style>
 </head>
-<body class="font-sans text-text-main bg-background overflow-x-hidden selection:bg-primary selection:text-white">
+<body class="font-sans text-text-main bg-background antialiased selection:bg-primary selection:text-white">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full z-50 glass transition-all duration-300">
+    <!-- Navigation (Sticky Glass) -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Left: Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img class="h-8 w-8" src="images/icon.svg" alt="AiRenamify Logo">
-                    <span class="font-bold text-xl tracking-tight">AiRenamify</span>
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img class="h-10 w-10" src="images/icon.png" alt="AiRenamify Logo">
+                    <span class="font-bold text-2xl tracking-tight text-gray-900">AiRenamify</span>
                 </div>
-
-                <!-- Center: Links (Hidden on mobile) -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-text-muted hover:text-primary transition-colors font-medium">Features</a>
-                    <a href="#how-it-works" class="text-text-muted hover:text-primary transition-colors font-medium">How it Works</a>
-                    <a href="#pricing" class="text-text-muted hover:text-primary transition-colors font-medium">Pricing</a>
-                </div>
-
-                <!-- Right: Buttons -->
-                <div class="flex items-center gap-4">
-                    <a href="https://github.com/willard-yuan/airenamify" target="_blank" class="hidden sm:block text-text-muted hover:text-text-main font-medium transition-colors">Sign In</a>
-                    <a href="#" class="bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
-                        Download for Free
-                    </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- <a href="#features" class="text-gray-600 hover:text-primary font-medium transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary font-medium transition-colors">How it Works</a> -->
+                    <a href="#pricing" class="text-gray-600 hover:text-primary font-medium transition-colors">Pricing</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section class="relative pt-32 pb-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary text-sm font-medium mb-6 border border-blue-100">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                v1.0 is now available
+            <!-- Logo Mark (Optional top anchor) -->
+            <div class="flex justify-center mb-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+                <img src="images/icon.png" class="h-16 w-16 drop-shadow-xl" alt="App Icon">
             </div>
 
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-600">
-                Rename Files with <br class="hidden md:block" />
-                <span class="text-primary">AI Vision</span>
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Rename Your Files with <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">AI</span>
             </h1>
-            
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-text-muted leading-relaxed">
-                Stop guessing filenames like <code class="bg-gray-100 px-2 py-0.5 rounded text-sm text-gray-800 font-mono">IMG_2934.jpg</code>. 
-                Drag, drop, and let AI analyze the content to give your files meaningful names instantly. 
-                Supports Images, PDFs, and Text.
+
+            <!-- Subheadline -->
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 animate-fade-in-up" style="animation-delay: 0.3s;">
+                Automatically rename your files based on their content using AI. Perfect for organizing images and documents with meaningful names.
             </p>
 
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:bg-blue-600 transition-all shadow-lg hover:shadow-primary/30 gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    Download for macOS
+            <!-- CTA Buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <!-- Mac Download (Green) -->
+                <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.6/AiRenamify-1.0.6-mac-universal.dmg" 
+                   class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                    <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
+                    </svg>
+                    Download for Mac
                 </a>
-                <button class="inline-flex items-center justify-center px-8 py-3.5 border border-gray-200 text-base font-medium rounded-xl text-text-main bg-white hover:bg-gray-50 transition-all hover:border-gray-300 gap-2 group">
-                    <svg class="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    View Demo
-                </button>
-            </div>
-
-            <!-- Visual Anchor -->
-            <div class="mt-20 relative mx-auto max-w-5xl">
-                <!-- Background Glow -->
-                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-blue-100 blur-3xl opacity-50 rounded-full -z-10"></div>
                 
-                <div class="relative rounded-2xl border border-gray-200/50 bg-white/50 backdrop-blur-sm p-2 shadow-2xl hero-tilt">
-                    <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none rounded-2xl"></div>
-                    <!-- App Screenshot -->
-                    <div class="relative overflow-hidden rounded-xl bg-gray-900 aspect-[16/10] group">
-                        <img src="images/airenamify_homepage.png" alt="AiRenamify Interface" class="w-full h-full object-cover">
-                        
-                        <!-- Scanning Beam Overlay -->
-                        <div class="scan-beam"></div>
-                        
-                        <!-- Floating Label Example -->
-                        <div class="absolute top-1/4 right-1/4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-lg text-sm font-medium text-green-600 flex items-center gap-1.5 float">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Renamed: abstract-waves.png
-                        </div>
-                    </div>
+                <!-- Windows Download (Dark) -->
+                <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.6/AiRenamify-1.0.6-win-x64.exe" 
+                   class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                    <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                    </svg>
+                    Download for Windows
+                </a>
+            </div>
+
+            <!-- Free Credits Banner -->
+            <div class="mt-6 animate-fade-in-up" style="animation-delay: 0.5s;">
+                <span class="inline-block px-4 py-2 rounded-full bg-green-50 text-[#2ecc71] font-medium text-sm border border-green-100">
+                    Get 10 free credits when you sign up!
+                </span>
+            </div>
+
+            <!-- Hero Images (The 3 Screenshots) -->
+            <div class="mt-16 relative max-w-6xl mx-auto h-[400px] md:h-[600px] perspective-container animate-fade-in-up" style="animation-delay: 0.6s;">
+                <!-- Left Image (Demo) - Tilted Left -->
+                <div class="absolute top-10 -left-4 md:left-0 w-2/3 md:w-1/2 z-10 transform -rotate-6 transition-transform hover:rotate-0 hover:z-30 duration-500">
+                    <img src="images/airenamify_demo.png" alt="AiRenamify Demo" class="rounded-xl shadow-2xl border border-gray-200 w-full h-auto">
+                </div>
+
+                <!-- Right Image (Credits) - Tilted Right -->
+                <div class="absolute top-10 -right-4 md:right-0 w-2/3 md:w-1/2 z-10 transform rotate-6 transition-transform hover:rotate-0 hover:z-30 duration-500">
+                    <img src="images/airenamify_credits.png" alt="AiRenamify Credits" class="rounded-xl shadow-2xl border border-gray-200 w-full h-auto">
+                </div>
+
+                <!-- Center Image (Homepage) - Front -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-4/5 md:w-3/5 z-20 hover:z-40 transition-transform duration-500 hover:scale-105">
+                    <img src="images/airenamify_homepage.png" alt="AiRenamify Homepage" class="rounded-xl shadow-2xl border border-gray-200 w-full h-auto bg-white">
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- The Problem Section -->
-    <section class="py-20 bg-background-subtle border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="relative p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-                        <!-- Chaos vs Order Visual -->
-                        <div class="space-y-3 font-mono text-sm">
-                            <div class="flex items-center gap-3 text-red-500 opacity-60">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                <span>IMG_2934.jpg</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-red-500 opacity-60">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                <span>Screenshot 2023-11-02...png</span>
-                            </div>
-                            <div class="h-px bg-gray-100 my-4"></div>
-                            <div class="flex items-center gap-3 text-success font-medium">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>golden-retriever-park.jpg</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-success font-medium">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>quarterly-report-q3.pdf</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Downloads folder is a mess.</h2>
-                    <p class="text-lg text-text-muted mb-6">
-                        You waste hours previewing files just to know what they are. 
-                        Filenames like <code class="text-sm bg-gray-200 px-1 rounded">DCIM_001</code> tell you nothing.
-                    </p>
-                    <p class="text-lg text-text-muted">
-                        AiRenamify brings order to chaos by seeing your files the way you do—turning cryptic codes into descriptive, searchable names instantly.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Features (Bento Grid) -->
-    <section id="features" class="py-24">
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Intelligent Organization</h2>
-                <p class="text-text-muted text-lg">Powerful AI models running locally or in the cloud to understand every file type.</p>
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
+                <p class="mt-4 text-xl text-gray-500">Choose the model that fits your needs. Run locally for privacy or use cloud for power.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
-                
-                <!-- Visual Intelligence (Large Card) -->
-                <div class="md:col-span-2 row-span-2 bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-primary">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Visual Intelligence</h3>
-                        <p class="text-text-muted mb-6 max-w-sm">It sees what you see. Uses Llama 4 Scout & GPT-4o Vision to describe images perfectly.</p>
-                    </div>
-                    <div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 md:opacity-100 md:w-2/5 md:h-3/4 md:mr-8 md:mb-8 transition-transform group-hover:scale-105 duration-500">
-                         <img src="images/airenamify_demo.png" class="rounded-lg shadow-lg object-cover w-full h-full border border-gray-200" alt="Demo">
-                    </div>
-                </div>
-
-                <!-- Smart Document Analysis -->
-                <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6 text-green-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Smart Doc Analysis</h3>
-                    <p class="text-text-muted text-sm">Reads PDFs & Docs. Extracts titles, summaries, or dates for filenames.</p>
-                </div>
-
-                <!-- Local & Private -->
-                <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 text-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Local & Private</h3>
-                    <p class="text-text-muted text-sm">Run 100% locally. Your files never leave your device with Local Mode.</p>
-                </div>
-
-                <!-- Bulk Processing -->
-                <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 text-purple-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Bulk Processing</h3>
-                    <p class="text-text-muted text-sm">Rename thousands of files in seconds.</p>
-                </div>
-
-                <!-- Cross Platform -->
-                <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6 text-orange-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Cross-Platform</h3>
-                    <p class="text-text-muted text-sm">Native performance on macOS & Windows.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="py-20 bg-background-subtle">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">How it Works</h2>
-            </div>
-
-            <div class="relative">
-                <!-- Connecting Line (Desktop) -->
-                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10"></div>
-
-                <div class="grid md:grid-cols-3 gap-12">
-                    <!-- Step 1 -->
-                    <div class="text-center bg-background-subtle pt-4">
-                        <div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center text-xl font-bold text-primary shadow-sm mb-6">1</div>
-                        <h3 class="text-xl font-bold mb-2">Drag & Drop</h3>
-                        <p class="text-text-muted">Simply drag your folder or selected files into the app window.</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="text-center bg-background-subtle pt-4">
-                        <div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center text-xl font-bold text-primary shadow-sm mb-6">2</div>
-                        <h3 class="text-xl font-bold mb-2">Choose Model</h3>
-                        <p class="text-text-muted">Select Cloud Vision for max accuracy or Local Mode for total privacy.</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="text-center bg-background-subtle pt-4">
-                        <div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center text-xl font-bold text-success shadow-sm mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Rename</h3>
-                        <p class="text-text-muted">Watch as your files are instantly renamed with descriptive titles.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-text-muted text-lg">Choose the power you need.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Local Mode -->
-                <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-lg transition-all relative">
-                    <h3 class="text-2xl font-bold mb-2">Local Mode</h3>
-                    <div class="text-4xl font-bold mb-6">Free <span class="text-lg text-text-muted font-normal">/ forever</span></div>
-                    <p class="text-text-muted mb-8">Perfect for privacy-conscious users and standard hardware.</p>
-                    
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Runs on your hardware</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Unlimited renames</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Privacy-first (Offline)</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#" class="block w-full py-3 px-6 text-center border border-gray-200 rounded-xl font-medium hover:border-gray-300 hover:bg-gray-50 transition-colors">Download Now</a>
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900">Local Mode</h3>
+                        <span class="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">Free Forever</span>
+                    </div>
+                    <p class="text-gray-500 mb-6">Run AI models on your own hardware. Complete privacy.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Runs on your device
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Unlimited renames
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Files never leave your computer
+                        </div>
+                    </div>
+                    <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.6/AiRenamify-1.0.6-mac-universal.dmg" class="block w-full text-center py-3 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-colors">
+                        Download Now
+                    </a>
                 </div>
 
                 <!-- Cloud Mode -->
-                <div class="bg-gray-900 text-white rounded-3xl border border-gray-800 p-8 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gradient-to-l from-primary to-transparent h-full w-1/3 opacity-20"></div>
-                    <div class="relative z-10">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold">Cloud Mode</h3>
-                            <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</span>
-                        </div>
-                        <div class="text-4xl font-bold mb-6">Credits <span class="text-lg text-gray-400 font-normal">/ pay-as-you-go</span></div>
-                        <p class="text-gray-400 mb-8">Access the smartest AI models for perfect accuracy.</p>
-                        
-                        <ul class="space-y-4 mb-8 text-gray-300">
-                            <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>GPT-4o Vision & Llama Scout</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Highest accuracy</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Get 50 Free Credits on Sign-up</span>
-                            </li>
-                        </ul>
-                        
-                        <a href="#" class="block w-full py-3 px-6 text-center bg-primary hover:bg-blue-600 rounded-xl font-medium transition-colors shadow-lg shadow-blue-900/50">Get Started</a>
+                <div class="bg-white rounded-2xl shadow-xl border-2 border-primary p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900">Cloud Mode</h3>
+                        <span class="text-2xl font-bold text-primary">Credits</span>
                     </div>
+                    <p class="text-gray-500 mb-6">Access powerful models like GPT-4o for highest accuracy.</p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            GPT-5 Nano / GPT-4o Mini
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Highest accuracy vision
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Pay-as-you-go credits
+                        </div>
+                    </div>
+                    <button class="block w-full text-center py-3 px-4 rounded-lg bg-primary text-white font-medium hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/30">
+                        Get 50 Free Credits
+                    </button>
                 </div>
-            </div>
-            
-            <div class="mt-12 max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="images/airenamify_credits.png" alt="Credits System" class="w-full object-cover">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-2">
-                    <img class="h-6 w-6 grayscale opacity-70" src="images/icon.svg" alt="Logo">
-                    <span class="font-bold text-gray-900">AiRenamify</span>
-                    <span class="text-gray-400 text-sm ml-2">© 2026</span>
-                </div>
-                
-                <div class="flex gap-8 text-sm text-text-muted">
-                    <a href="#" class="hover:text-text-main transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-text-main transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-text-main transition-colors">Support</a>
-                </div>
-
-                <div class="flex gap-6">
-                    <a href="#" class="text-gray-400 hover:text-text-main transition-colors">
-                        <span class="sr-only">Twitter</span>
-                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-                    </a>
-                    <a href="https://github.com/willard-yuan/airenamify" class="text-gray-400 hover:text-text-main transition-colors">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <img class="h-6 w-6 grayscale opacity-50" src="images/icon.png" alt="Logo">
+                <span class="text-gray-400 text-sm">© 2026 AiRenamify</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Terms</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Privacy</a>
             </div>
         </div>
     </footer>
