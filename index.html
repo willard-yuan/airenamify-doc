@@ -65,25 +65,26 @@
     <!-- Navigation (Sticky Glass) -->
     <nav class="fixed w-full z-50 glass border-b border-gray-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img class="h-10 w-10" src="images/icon.png" alt="AiRenamify Logo">
+                    <img class="h-12 w-12" src="images/icon.png" alt="AiRenamify Logo">
                     <span class="font-bold text-2xl tracking-tight text-gray-900">AiRenamify</span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <!-- <a href="#features" class="text-gray-600 hover:text-primary font-medium transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-primary font-medium transition-colors">How it Works</a> -->
-                    <a href="#pricing" class="text-gray-600 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">How it Works</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Pricing</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">FAQ</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-24 pb-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
             <!-- Logo Mark (Optional top anchor) -->
@@ -123,9 +124,9 @@
             </div>
 
             <!-- Free Credits Banner -->
-            <div class="mt-[4.5rem] animate-fade-in-up" style="animation-delay: 0.5s;">
+            <div class="mt-[3.5rem] animate-fade-in-up" style="animation-delay: 0.5s;">
                 <span class="inline-block px-4 py-2 rounded-full bg-green-50 text-[#2ecc71] font-medium text-sm border border-green-100">
-                    Get 10 free credits when you sign up!
+                    🎁 Get 10 free credits when you sign up!
                 </span>
             </div>
 
@@ -154,67 +155,484 @@
         </div>
     </section>
 
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Core Features</h2>
+                <p class="mt-4 text-xl text-gray-500">Everything you need to organize your digital life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 1. Intelligent Recognition -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Intelligent Recognition</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Uses advanced AI (LLMs and Vision) to "read" and "see"your files. It understands the content of images and documents to generate descriptive, human-readable names automatically.
+                    </p>
+                </div>
+
+                <!-- 2. Privacy & Security -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Privacy & Security</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        We prioritize your privacy. Your files are transmitted securely via encrypted connections solely for analysis and are immediately discarded. We never store your personal files.
+                    </p>
+                </div>
+
+                <!-- 3. Smart Customization -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Customization</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Full control over your filenames. Configure case styles, set target languages, or add custom instructions like "Always include the primary color" to guide the AI.
+                    </p>
+                </div>
+
+                <!-- 4. Bulk Processing -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Bulk Processing</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Rename thousands of files in seconds. AiRenamify handles large queues efficiently, saving you hours of manual work while maintaining high accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">How It Works</h2>
+                <p class="mt-4 text-xl text-gray-500">Three simple steps to organized files.</p>
+            </div>
+
+            <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-100 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-gray-100">
+                        <span class="text-3xl font-bold text-blue-500">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Drag & Drop</h3>
+                    <p class="text-gray-600">Simply drag your messy files into the AiRenamify window.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-gray-100">
+                        <span class="text-3xl font-bold text-blue-500">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Choose Model</h3>
+                    <p class="text-gray-600">Select between Cloud models for power models for privacy.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center relative">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-gray-100">
+                        <span class="text-3xl font-bold text-green-500">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Rename</h3>
+                    <p class="text-gray-600">Watch as AI instantly gives every file a meaningful name.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
-                <p class="mt-4 text-xl text-gray-500">Choose the model that fits your needs. Run locally for privacy or use cloud for power.</p>
+                <p class="mt-4 text-xl text-gray-500">Choose the credit package that fits your needs. No hidden fees.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Local Mode -->
-                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-gray-900">Local Mode</h3>
-                        <span class="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">Free Forever</span>
-                    </div>
-                    <p class="text-gray-500 mb-6">Run AI models on your own hardware. Complete privacy.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Runs on your device
-                        </div>
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Unlimited renames
-                        </div>
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Files never leave your computer
-                        </div>
-                    </div>
-                    <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.6/AiRenamify-1.0.6-mac-universal.dmg" class="block w-full text-center py-3 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-colors">
-                        Download Now
-                    </a>
-                </div>
-
+            <div class="max-w-3xl mx-auto">
                 <!-- Cloud Mode -->
-                <div class="bg-white rounded-2xl shadow-xl border-2 border-primary p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-gray-900">Cloud Mode</h3>
-                        <span class="text-2xl font-bold text-primary">Credits</span>
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 hover:shadow-2xl transition-all duration-300">
+                    <div class="flex flex-col md:flex-row gap-12">
+                        <!-- Left Side: Pricing & Slider -->
+                        <div class="flex-1 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-8">
+                                <svg class="w-6 h-6 text-[#0ea5e9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                </svg>
+                                <h3 class="text-2xl font-bold text-gray-900">Cloud Mode</h3>
+                            </div>
+                            
+                            <!-- Dynamic Price Display -->
+                            <div class="mb-10">
+                                <div class="flex flex-col">
+                                    <span id="credits-display" class="text-5xl font-extrabold text-gray-900 tracking-tight transition-all duration-200">200 credits</span>
+                                    <span id="price-display" class="text-2xl font-medium text-gray-500 mt-2 transition-all duration-200">$10</span>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Slider -->
+                            <div class="relative w-full h-12 flex items-center">
+                                <input type="range" min="0" max="2" value="1" step="1" id="pricing-slider" 
+                                    class="w-full absolute z-20 opacity-0 cursor-pointer h-full"
+                                    aria-label="Pricing Slider">
+                                
+                                <!-- Custom Track -->
+                                <div class="w-full h-3 bg-gray-100 rounded-full relative overflow-hidden">
+                                    <div id="slider-fill" class="h-full bg-gray-900 rounded-full absolute left-0 top-0 transition-all duration-300 ease-out" style="width: 50%"></div>
+                                </div>
+
+                                <!-- Custom Thumb (Visual Only, follows logic) -->
+                                <div id="slider-thumb" class="absolute h-8 w-8 bg-white border-4 border-gray-900 rounded-full shadow-lg pointer-events-none transition-all duration-300 ease-out z-10" style="left: 50%; transform: translateX(-50%)"></div>
+                                
+                                <!-- Ticks/Labels -->
+                                <div class="absolute w-full flex justify-between px-1 top-8">
+                                    <div class="w-0.5 h-2 bg-gray-200"></div>
+                                    <div class="w-0.5 h-2 bg-gray-200"></div>
+                                    <div class="w-0.5 h-2 bg-gray-200"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-xs font-medium text-gray-400 mt-2 px-1">
+                                <span>Starter</span>
+                                <span>Popular</span>
+                                <span>Pro</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Features & Button -->
+                        <div class="flex-1 border-t md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-12 flex flex-col justify-between">
+                            <ul class="space-y-5 mb-8">
+                                <li class="flex items-start text-gray-600 leading-relaxed">
+                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span><strong class="text-gray-900 font-semibold">Curated AI Models</strong>: Access to a premium, hand-picked selection of AI models.</span>
+                                </li>
+                                <li class="flex items-start text-gray-600 leading-relaxed">
+                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span><strong class="text-gray-900 font-semibold">Flexible Credits</strong>: Pay-as-you-go (1 credit/rename) with <strong class="text-gray-900 font-semibold">no expiration date</strong>.</span>
+                                </li>
+                                <li class="flex items-start text-gray-600 leading-relaxed">
+                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span><strong class="text-gray-900 font-semibold">Secure & Private</strong>: Files are processed privately in the cloud to ensure data safety.</span>
+                                </li>
+                                <li class="flex items-start text-gray-600 leading-relaxed">
+                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span><strong class="text-gray-900 font-semibold">Universal Support</strong>: Works with all file types (up to <strong class="text-gray-900 font-semibold">10MB</strong> per file).</span>
+                                </li>
+                            </ul>
+                            
+                            <button id="buy-credits-btn" class="w-full sm:w-auto self-start px-8 py-4 bg-[#0ea5e9] text-white font-bold text-lg rounded-xl hover:bg-[#0284c7] transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 group hover:-translate-y-0.5">
+                                Buy Credits
+                                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <p class="text-gray-500 mb-6">Access powerful models like GPT-4o for highest accuracy.</p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            GPT-5 Nano / GPT-4o Mini
-                        </div>
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Highest accuracy vision
-                        </div>
-                        <div class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Pay-as-you-go credits
-                        </div>
-                    </div>
-                    <button class="block w-full text-center py-3 px-4 rounded-lg bg-primary text-white font-medium hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/30">
-                        Get 50 Free Credits
-                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Modal -->
+    <div id="download-modal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-xl opacity-0 scale-95" id="modal-panel">
+                    
+                    <!-- Close Button -->
+                    <button id="close-modal-btn" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <div class="px-6 py-8 sm:p-10">
+                        <h3 class="text-2xl font-bold leading-6 text-gray-900 mb-4" id="modal-title">Purchase Credits</h3>
+                        <div class="mt-2">
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                To purchase credits, please download and install the AiRenamify app. You can buy credits directly from within the app.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <!-- Mac Download (Green) -->
+                            <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.7/AiRenamify-1.0.7-mac-universal.dmg" 
+                               class="flex-1 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
+                                </svg>
+                                Download for Mac
+                            </a>
+                            
+                            <!-- Windows Download (Dark) -->
+                            <a href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.0.7/AiRenamify-1.0.7-win-x64.exe" 
+                               class="flex-1 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                                </svg>
+                                Download for Windows
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Frequently Asked Questions</h2>
+                <p class="mt-4 text-xl text-gray-500">Everything you need to know about AiRenamify.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        What makes AiRenamify different from standard batch renamers?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Unlike traditional renamers that use rigid patterns (e.g., IMG_001.jpg), AiRenamify uses advanced Artificial Intelligence (Vision and LLMs) to "see" and "read" your files. It understands the content of an image or a document and generates a descriptive, human-readable name automatically (e.g., sunset-over-paris-eiffel-tower.jpg).
+                    </p>
+                </details>
+
+                <!-- Question 2 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        What file formats does AiRenamify support?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed text-base">
+                        We support a wide range of formats:
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Images:</strong> JPG, PNG, WEBP, GIF, BMP, TIFF, HEIC, and HEIF.</li>
+                            <li><strong>Documents:</strong> PDF, Markdown (.md), Plain Text (.txt).</li>
+                            <li><strong>Code & Data:</strong> JSON, JS, TS, CSS, HTML, CSV.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Question 3 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Do I need technical skills to use this?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Not at all. AiRenamify is designed for simplicity. Just drag and drop your files, and the AI handles the rest. Advanced settings are available if you need them, but the default "Magic" mode works for everyone.
+                    </p>
+                </details>
+
+                <!-- Question 4 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Which platforms are supported?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        AiRenamify is optimized for <strong>macOS</strong> (Universal build for Intel & Apple Silicon) and <strong>Windows</strong> (x64).
+                    </p>
+                </details>
+
+                <!-- Question 5 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Is my data safe when using Cloud Mode?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Yes. We prioritize your privacy. Your files are transmitted securely via encrypted connections solely for the purpose of analysis. They are processed by the AI and immediately discarded. We do not store your personal files on our servers.
+                    </p>
+                </details>
+
+                <!-- Question 6 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Does Local Mode cost any credits?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        No. Local Mode is completely free to use as it utilizes your own hardware resources.
+                    </p>
+                </details>
+
+                <!-- Question 7 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Can I customize how the files are named?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Absolutely. In the <strong>Settings</strong> menu, you can configure:
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Case Style:</strong> Kebab-case, Snake_case, CamelCase, PascalCase, or Title Case.</li>
+                            <li><strong>Language:</strong> Have files renamed in English, Spanish, French, Chinese, etc.</li>
+                            <li><strong>Max Length:</strong> Limit filenames to a specific character count.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Question 8 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Can I give the AI specific instructions?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Yes! You can add <strong>Custom Instructions</strong> in the settings. For example, you can tell the AI: <em>"Always include the primary color in the filename"</em> or <em>"Start every filename with 'Project-Alpha-'"</em>.
+                    </p>
+                </details>
+
+                <!-- Question 9 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Does it support bulk renaming?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Yes. You can drag and drop hundreds of files at once. AiRenamify will process them in a queue to ensure stability and respect API rate limits.
+                    </p>
+                </details>
+
+                <!-- Question 10 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Can I modify the suggested name before applying it?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Currently, AiRenamify applies the best AI suggestion automatically. However, you can review the new names in the list. If you are not satisfied, you can simply remove the file from the list or rename it again with different instructions.
+                    </p>
+                </details>
+
+                <!-- Question 11 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        How does the "Image Model" selection affect results?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Different models have different strengths:
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Llava 13b:</strong> Excellent balance of speed and description accuracy (Default).</li>
+                            <li><strong>GPT-4o:</strong> State-of-the-art reasoning, best for complex scenes or reading text within images.</li>
+                            <li><strong>Llama 4 Scout:</strong> Great for general object detection.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Question 12 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        How does the Credit system work?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Processing files in Cloud Mode consumes Credits to cover the cost of high-end GPU servers. Typically, 1 image or document analysis = 1 Credit.
+                    </p>
+                </details>
+
+                <!-- Question 13 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Do you offer a free trial?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        Yes! New users receive a welcome package of free credits to test the capabilities of our Cloud models.
+                    </p>
+                </details>
+
+                <!-- Question 14 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Why is the processing speed slower for some files?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        High-resolution images or large PDF documents require more processing power. Additionally, models like GPT-4o provide deeper analysis but may take slightly longer than lighter models like GPT-5 Nano.
+                    </p>
+                </details>
+
+                <!-- Question 15 -->
+                <details class="group bg-gray-50 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:bg-gray-100 open:bg-white open:shadow-lg open:ring-1 open:ring-black/5">
+                    <summary class="flex items-center justify-between font-medium text-gray-900 text-lg select-none">
+                        Why does the app say "Thinking..."?
+                        <svg class="ml-4 h-6 w-6 transition-transform group-open:rotate-180 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-base">
+                        This means the AI is currently analyzing the file content. This process typically takes 2-5 seconds per file depending on the complexity and your internet speed.
+                    </p>
+                </details>
+
             </div>
         </div>
     </section>
@@ -234,6 +652,86 @@
             </div>
         </div>
     </footer>
+
+    <!-- Interactive Pricing Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('pricing-slider');
+            const sliderFill = document.getElementById('slider-fill');
+            const sliderThumb = document.getElementById('slider-thumb');
+            const creditsDisplay = document.getElementById('credits-display');
+            const priceDisplay = document.getElementById('price-display');
+
+            const pricingData = [
+                { credits: "100 credits", price: "$5" },
+                { credits: "200 credits", price: "$10" },
+                { credits: "400 credits", price: "$20" }
+            ];
+
+            function updatePricing(index) {
+                // Update Text
+                const data = pricingData[index];
+                creditsDisplay.style.opacity = '0';
+                priceDisplay.style.opacity = '0';
+                
+                setTimeout(() => {
+                    creditsDisplay.textContent = data.credits;
+                    priceDisplay.textContent = data.price;
+                    creditsDisplay.style.opacity = '1';
+                    priceDisplay.style.opacity = '1';
+                }, 150);
+
+                // Update Slider Visuals
+                const percentage = (index / (pricingData.length - 1)) * 100;
+                sliderFill.style.width = `${percentage}%`;
+                sliderThumb.style.left = `${percentage}%`;
+            }
+
+            slider.addEventListener('input', (e) => {
+                updatePricing(e.target.value);
+            });
+
+            // Initialize with default value (index 1: 200 credits)
+            updatePricing(1);
+
+            // Modal Logic
+            const modal = document.getElementById('download-modal');
+            const buyBtn = document.getElementById('buy-credits-btn');
+            const closeBtn = document.getElementById('close-modal-btn');
+            const backdrop = document.getElementById('modal-backdrop');
+            const panel = document.getElementById('modal-panel');
+
+            function openModal() {
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'scale-95');
+                panel.classList.add('opacity-100', 'scale-100');
+            }
+
+            function closeModal() {
+                backdrop.classList.add('opacity-0');
+                panel.classList.remove('opacity-100', 'scale-100');
+                panel.classList.add('opacity-0', 'scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300); // Wait for transition
+            }
+
+            buyBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+            
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
