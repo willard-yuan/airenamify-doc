@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf public && mkdir -p public/css && cp *.html public/ && cp -r images public/ && tailwindcss -i ./input.css -o ./public/css/style.css",
+    "build": "rm -rf public && mkdir -p public/css && cp *.html public/ && cp robots.txt sitemap.xml serve.json public/ && cp images/favicon.ico public/ && cp -r images public/ && tailwindcss -i ./input.css -o ./public/css/style.css",
     "start": "serve public",
     "watch": "tailwindcss -i ./input.css -o ./css/style.css --watch"
   },
