@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff">
+    <title>Changelog - AiRenamify</title>
+    <meta name="description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta name="author" content="Willard Yuan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://airenamify.com/changelog.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://airenamify.com/changelog.html" />
+    <meta property="og:title" content="Changelog - AiRenamify" />
+    <meta property="og:description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta property="og:image" content="https://airenamify.com/images/airenamify_homepage.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://airenamify.com/changelog.html" />
+    <meta property="twitter:title" content="Changelog - AiRenamify" />
+    <meta property="twitter:description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta property="twitter:image" content="https://airenamify.com/images/airenamify_homepage.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    
+    <style>
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
+    </style>
+</head>
+<body class="font-sans text-text-main bg-background antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Sticky Glass) -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img class="h-12 w-12" src="images/icon.png" alt="AiRenamify Logo">
+                    <span class="font-bold text-2xl tracking-tight text-gray-900">AiRenamify</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#features" title="View AiRenamify Features" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
+                    <a href="index.html#how-it-works" title="See How AiRenamify Works" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">How it Works</a>
+                    <a href="index.html#pricing" title="Check Pricing Plans" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Pricing</a>
+                    <a href="index.html#faq" title="Read Frequently Asked Questions" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">FAQ</a>
+                    <a href="changelog.html" title="View Version History" class="text-blue-600 font-semibold transition-colors">Changelog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <section class="relative pt-32 pb-24 overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <!-- Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+                        Changelog
+                    </h1>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+                        Track the latest updates and improvements to AiRenamify.
+                    </p>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-gray-100 ml-4 md:ml-6 space-y-16 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    
+                    <!-- v1.0.8 Entry -->
+                    <div class="relative pl-8 md:pl-12">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
+                        
+                        <!-- Header Row -->
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
+                            <h2 class="text-2xl font-bold text-gray-900">v1.0.8</h2>
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-0.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold border border-blue-100">
+                                    Latest
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Card -->
+                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                            <ul class="space-y-8">
+                                <!-- Item 1 -->
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smart History Layout</h3>
+                                        <p class="text-gray-600 leading-relaxed text-base">
+                                            Improved clarity with middle-truncation, tooltips, and fixed row heights for long filenames.
+                                        </p>
+                                    </div>
+                                </li>
+                                
+                                <!-- Item 2 -->
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Enhanced Visual Hierarchy</h3>
+                                        <p class="text-gray-600 leading-relaxed text-base">
+                                            Highlighted renaming results with professional typography and simplified date formats.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <!-- Item 3 -->
+                                <li class="flex items-start group">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Polished UI Components</h3>
+                                        <p class="text-gray-600 leading-relaxed text-base">
+                                            Modernized Credit badges and intelligent pagination that auto-hides when not needed.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <img class="h-6 w-6 grayscale opacity-50" src="images/icon.png" alt="Logo">
+                <span class="text-gray-400 text-sm">© 2026 AiRenamify</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Terms</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
