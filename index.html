@@ -156,7 +156,7 @@
             <!-- CTA Buttons -->
             <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
                 <!-- Mac Download (Green) -->
-                <a id="download-mac-hero" data-download-platform="mac" href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.1.1/AiRenamify-1.1.1-mac-universal.dmg" 
+                <a href="/download?os=mac" 
                    class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                     <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
@@ -165,7 +165,7 @@
                 </a>
                 
                 <!-- Windows Download (Dark) -->
-                <a id="download-win-hero" data-download-platform="win" href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.1.1/AiRenamify-1.1.1-win-x64.exe" 
+                <a href="/download?os=win" 
                    class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                     <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
@@ -477,7 +477,7 @@
 
                         <div class="mt-8 flex flex-col sm:flex-row gap-4">
                             <!-- Mac Download (Green) -->
-                            <a id="download-mac-modal" data-download-platform="mac" href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.1.1/AiRenamify-1.1.1-mac-universal.dmg" 
+                            <a href="/download?os=mac" 
                                class="flex-1 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
@@ -486,7 +486,7 @@
                             </a>
                             
                             <!-- Windows Download (Dark) -->
-                            <a id="download-win-modal" data-download-platform="win" href="https://github.com/willard-yuan/airenamify-releases/releases/download/v1.1.1/AiRenamify-1.1.1-win-x64.exe" 
+                            <a href="/download?os=win" 
                                class="flex-1 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
@@ -816,63 +816,6 @@
     <!-- Interactive Pricing Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const downloadBaseUrl = 'https://contents-cdn.airenamify.com/release/';
-            const downloadLinks = {
-                mac: [
-                    document.getElementById('download-mac-hero'),
-                    document.getElementById('download-mac-modal')
-                ],
-                win: [
-                    document.getElementById('download-win-hero'),
-                    document.getElementById('download-win-modal')
-                ]
-            };
-
-            function extractPath(yamlText) {
-                const pathMatch = yamlText.match(/^\s*path:\s*(.+)\s*$/m);
-                if (pathMatch) {
-                    return pathMatch[1].trim();
-                }
-                const urlMatch = yamlText.match(/^\s*url:\s*(.+)\s*$/m);
-                if (urlMatch) {
-                    return urlMatch[1].trim();
-                }
-                return null;
-            }
-
-            async function updateDownloadLinks() {
-                try {
-                    const [macYaml, winYaml] = await Promise.all([
-                        fetch(`${downloadBaseUrl}latest-mac.yml`, { cache: 'no-store' }).then((res) => res.ok ? res.text() : ''),
-                        fetch(`${downloadBaseUrl}latest.yml`, { cache: 'no-store' }).then((res) => res.ok ? res.text() : '')
-                    ]);
-
-                    const macPath = extractPath(macYaml);
-                    const winPath = extractPath(winYaml);
-
-                    if (macPath) {
-                        const macUrl = `${downloadBaseUrl}${macPath}`;
-                        downloadLinks.mac.forEach((link) => {
-                            if (link) {
-                                link.href = macUrl;
-                            }
-                        });
-                    }
-
-                    if (winPath) {
-                        const winUrl = `${downloadBaseUrl}${winPath}`;
-                        downloadLinks.win.forEach((link) => {
-                            if (link) {
-                                link.href = winUrl;
-                            }
-                        });
-                    }
-                } catch (error) {
-                    return;
-                }
-            }
-
-            updateDownloadLinks();
             const slider = document.getElementById('pricing-slider');
             const sliderFill = document.getElementById('slider-fill');
             const sliderThumb = document.getElementById('slider-thumb');

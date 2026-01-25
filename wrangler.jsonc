@@ -1,9 +1,16 @@
 {
   "name": "airenamify-doc",
+  "main": "src/worker.js",
   "compatibility_date": "2026-01-20",
   "assets": {
     "directory": "./public"
   },
+  "r2_buckets": [
+    {
+      "binding": "RELEASE_BUCKET",
+      "bucket_name": "airenamify-updates"
+    }
+  ],
   "observability": {
     "enabled": true
   }
