@@ -7,3 +7,19 @@
     @apply antialiased text-text-main bg-background;
   }
 }
+
+@layer utilities {
+  @keyframes breathe {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(255, 228, 230, 0);
+      border-color: rgba(243, 244, 246, 1);
+    }
+    50% {
+      box-shadow: 0 0 0 4px rgba(255, 228, 230, 0.5);
+      border-color: rgba(255, 228, 230, 1);
+    }
+  }
+  .animate-breathe {
+    animation: breathe 3s infinite ease-in-out;
+  }
+}
