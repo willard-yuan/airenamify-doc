@@ -157,15 +157,53 @@
             </p>
 
             <!-- CTA Buttons -->
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
-                <!-- Mac Download (Green) -->
-                <a href="/download?os=mac" 
-                   class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                    <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
-                    </svg>
-                    Download for Mac
-                </a>
+            <div class="relative z-30 mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <!-- Mac Download Dropdown -->
+                <div class="relative inline-block text-left" id="mac-download-container">
+                    <button type="button" 
+                            id="mac-download-btn"
+                            class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-[#2ecc71] hover:bg-[#27ae60] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group">
+                        <svg class="w-6 h-6 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.23-3.14-2.47-1.7-2.45-3-6.24-1.25-9.27 1.29-2.21 3.59-2.58 4.79-2.58 1.16 0 2.22.79 2.91.79.7 0 2.05-.98 3.47-.84 1.18.05 2.07.48 2.84 1.18-2.5 1.5-2.09 5.75.46 6.84.01.03.01.06.02.09-.49 1.25-1.1 2.52-1.79 3.76zM13 5.06c.66-1.59 2.58-2.56 2.37-5.06-2.18.17-4.14 1.45-4.83 3.05-.6 1.39.26 2.87 2.46 2.01z"/>
+                        </svg>
+                        Download for Mac
+                        <svg class="w-5 h-5 ml-2 -mr-1 transition-transform duration-200 group-aria-expanded:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div id="mac-dropdown-menu" 
+                         class="hidden absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-xl bg-white shadow-2xl ring-1 ring-black/5 focus:outline-none transform opacity-0 scale-95 transition-all duration-200">
+                        <div class="p-1.5 space-y-1">
+                            <!-- Apple Silicon -->
+                            <a href="/download?os=mac&arch=arm64" class="group flex items-center px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex-shrink-0 mr-3 p-2 rounded-lg bg-gray-100 text-gray-500 group-hover:bg-white group-hover:text-[#2ecc71] group-hover:shadow-sm transition-all">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col text-left">
+                                    <span class="text-sm font-bold text-gray-900">Apple Silicon</span>
+                                    <span class="text-xs text-gray-500 font-medium">M1/M2/M3/M4</span>
+                                </div>
+                            </a>
+
+                            <!-- Intel Mac -->
+                            <a href="/download?os=mac&arch=x64" class="group flex items-center px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="flex-shrink-0 mr-3 p-2 rounded-lg bg-gray-100 text-gray-500 group-hover:bg-white group-hover:text-[#2ecc71] group-hover:shadow-sm transition-all">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col text-left">
+                                    <span class="text-sm font-bold text-gray-900">Intel Mac</span>
+                                    <span class="text-xs text-gray-500 font-medium">x64</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Windows Download (Dark) -->
                 <a href="/download?os=win" 
@@ -894,6 +932,63 @@
                     closeModal();
                 }
             });
+
+            // Mac Download Dropdown Logic
+            const macBtn = document.getElementById('mac-download-btn');
+            const macMenu = document.getElementById('mac-dropdown-menu');
+            const macContainer = document.getElementById('mac-download-container');
+
+            function toggleMacDropdown() {
+                const isHidden = macMenu.classList.contains('hidden');
+                if (isHidden) {
+                    macMenu.classList.remove('hidden');
+                    // Reflow for transition
+                    void macMenu.offsetWidth;
+                    macMenu.classList.remove('opacity-0', 'scale-95');
+                    macMenu.classList.add('opacity-100', 'scale-100');
+                    macBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    macMenu.classList.remove('opacity-100', 'scale-100');
+                    macMenu.classList.add('opacity-0', 'scale-95');
+                    macBtn.setAttribute('aria-expanded', 'false');
+                    setTimeout(() => {
+                        macMenu.classList.add('hidden');
+                    }, 200);
+                }
+            }
+
+            if (macBtn && macMenu) {
+                macBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleMacDropdown();
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!macContainer.contains(e.target) && !macMenu.classList.contains('hidden')) {
+                        // Close it
+                        macMenu.classList.remove('opacity-100', 'scale-100');
+                        macMenu.classList.add('opacity-0', 'scale-95');
+                        macBtn.setAttribute('aria-expanded', 'false');
+                        setTimeout(() => {
+                            macMenu.classList.add('hidden');
+                        }, 200);
+                    }
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !macMenu.classList.contains('hidden')) {
+                         // Close it
+                        macMenu.classList.remove('opacity-100', 'scale-100');
+                        macMenu.classList.add('opacity-0', 'scale-95');
+                        macBtn.setAttribute('aria-expanded', 'false');
+                        setTimeout(() => {
+                            macMenu.classList.add('hidden');
+                        }, 200);
+                    }
+                });
+            }
         });
     </script>
     <!-- umami -->
