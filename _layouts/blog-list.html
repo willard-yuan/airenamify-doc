@@ -122,6 +122,15 @@
                         Download
                     </a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden relative z-50 p-2 -mr-2 focus:outline-none group" aria-label="Toggle Menu">
+                    <div class="relative w-6 h-5 flex flex-col justify-between overflow-hidden">
+                        <span class="w-full h-0.5 bg-gray-900 rounded-full transform transition-all duration-300 origin-left group-hover:bg-[#2ecc71]"></span>
+                        <span class="w-full h-0.5 bg-gray-900 rounded-full transform transition-all duration-300 group-hover:bg-[#2ecc71]"></span>
+                        <span class="w-full h-0.5 bg-gray-900 rounded-full transform transition-all duration-300 origin-left group-hover:bg-[#2ecc71]"></span>
+                    </div>
+                </button>
             </div>
         </div>
     </nav>
@@ -211,6 +220,59 @@
             isHovering = false;
             movePillTo(activeItem);
         });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        const menuSpans = mobileMenuBtn ? mobileMenuBtn.querySelectorAll('span') : [];
+
+        function toggleMobileMenu() {
+            const isOpen = !mobileMenu.classList.contains('pointer-events-none');
+            
+            if (isOpen) {
+                // Close Menu
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                mobileMenu.classList.remove('opacity-100', 'scale-100');
+                document.body.style.overflow = ''; // Restore scrolling
+
+                // Reset Hamburger Icon
+                menuSpans[0].classList.remove('rotate-45', 'translate-y-2');
+                menuSpans[1].classList.remove('opacity-0');
+                menuSpans[2].classList.remove('-rotate-45', '-translate-y-2');
+            } else {
+                // Open Menu
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                mobileMenu.classList.add('opacity-100', 'scale-100');
+                document.body.style.overflow = 'hidden'; // Lock scrolling
+
+                // Animate Hamburger Icon to X
+                menuSpans[0].classList.add('rotate-45', 'translate-y-2');
+                menuSpans[1].classList.add('opacity-0');
+                menuSpans[2].classList.add('-rotate-45', '-translate-y-2');
+            }
+        }
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            // Close menu when clicking a link
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    toggleMobileMenu();
+                });
+            });
+
+            // Close on Resize if switching to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('pointer-events-none')) {
+                    toggleMobileMenu();
+                }
+            });
+        }
     </script>
 </body>
 </html>
