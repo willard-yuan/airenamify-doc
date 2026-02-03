@@ -32,6 +32,16 @@ files.forEach(file => {
     // Optional: Remove the first H1 if it exists, as we render title in the header
     html = html.replace(/<h1[^>]*>.*?<\/h1>/s, '');
     
+    // Auto-generate description if missing
+    let description = attributes.description || attributes.summary;
+    if (!description) {
+        const plainText = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        description = plainText.substring(0, 160) + (plainText.length > 160 ? '...' : '');
+    }
+    
+    // Update attributes with ensured description
+    attributes.description = description;
+    
     posts.push({
         attributes,
         body,
