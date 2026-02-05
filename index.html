@@ -472,98 +472,166 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-white border-t border-gray-200">
+    <section id="pricing" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
-                <p class="mt-4 text-xl text-gray-500">Choose the credit package that fits your needs. No hidden fees.</p>
+                <p class="mt-4 text-xl text-gray-500">Choose the mode that fits your workflow. No hidden fees.</p>
             </div>
 
-            <div class="max-w-3xl mx-auto">
-                <!-- Cloud Mode -->
-                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 hover:shadow-2xl transition-all duration-300">
-                    <div class="flex flex-col md:flex-row gap-12">
-                        <!-- Left Side: Pricing & Slider -->
-                        <div class="flex-1 flex flex-col justify-center">
-                            <div class="flex items-center gap-3 mb-8">
-                                <svg class="w-6 h-6 text-[#0ea5e9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                </svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Cloud Mode Card -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all hover:scale-105 hover:shadow-2xl duration-300">
+                    <div class="p-8 md:p-12 h-full flex flex-col">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 bg-sky-100 rounded-xl">
+                                    <svg class="w-8 h-8 text-[#0ea5e9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                    </svg>
+                                </div>
                                 <h3 class="text-2xl font-bold text-gray-900">Cloud Mode</h3>
                             </div>
-                            
-                            <!-- Dynamic Price Display -->
-                            <div class="mb-10">
-                                <div class="flex flex-col">
-                                    <span id="credits-display" class="text-5xl font-extrabold text-gray-900 tracking-tight transition-all duration-200">200 credits</span>
-                                    <span id="price-display" class="text-2xl font-medium text-gray-500 mt-2 transition-all duration-200">$10</span>
-                                </div>
-                            </div>
-
-                            <!-- Interactive Slider -->
-                            <div class="relative w-full h-12 flex items-center">
-                                <input type="range" min="0" max="2" value="1" step="1" id="pricing-slider" 
-                                    class="w-full absolute z-20 opacity-0 cursor-pointer h-full"
-                                    aria-label="Pricing Slider">
-                                
-                                <!-- Custom Track -->
-                                <div class="w-full h-3 bg-gray-100 rounded-full relative overflow-hidden">
-                                    <div id="slider-fill" class="h-full bg-gray-900 rounded-full absolute left-0 top-0 transition-all duration-300 ease-out" style="width: 50%"></div>
-                                </div>
-
-                                <!-- Custom Thumb (Visual Only, follows logic) -->
-                                <div id="slider-thumb" class="absolute h-8 w-8 bg-white border-4 border-gray-900 rounded-full shadow-lg pointer-events-none transition-all duration-300 ease-out z-10" style="left: 50%; transform: translateX(-50%)"></div>
-                                
-                                <!-- Ticks/Labels -->
-                                <div class="absolute w-full flex justify-between px-1 top-8">
-                                    <div class="w-0.5 h-2 bg-gray-200"></div>
-                                    <div class="w-0.5 h-2 bg-gray-200"></div>
-                                    <div class="w-0.5 h-2 bg-gray-200"></div>
-                                </div>
-                            </div>
-                            <div class="flex justify-between text-xs font-medium text-gray-400 mt-2 px-1">
-                                <span>Starter</span>
-                                <span>Popular</span>
-                                <span>Pro</span>
-                            </div>
                         </div>
 
-                        <!-- Right Side: Features & Button -->
-                        <div class="flex-1 border-t md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-12 flex flex-col justify-between">
-                            <ul class="space-y-5 mb-8">
-                                <li class="flex items-start text-gray-600 leading-relaxed">
-                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span><strong class="text-gray-900 font-semibold">Curated AI Models</strong>: Access to a premium, hand-picked selection of AI models.</span>
-                                </li>
-                                <li class="flex items-start text-gray-600 leading-relaxed">
-                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span><strong class="text-gray-900 font-semibold">Flexible Credits</strong>: Pay-as-you-go (1 credit/rename) with <strong class="text-gray-900 font-semibold">no expiration date</strong>.</span>
-                                </li>
-                                <li class="flex items-start text-gray-600 leading-relaxed">
-                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span><strong class="text-gray-900 font-semibold">Secure & Private</strong>: Files are processed privately in the cloud to ensure data safety.</span>
-                                </li>
-                                <li class="flex items-start text-gray-600 leading-relaxed">
-                                    <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span><strong class="text-gray-900 font-semibold">Universal Support</strong>: Works with all file types (up to <strong class="text-gray-900 font-semibold">10MB</strong> per file).</span>
-                                </li>
-                            </ul>
+                        <div class="mb-8">
+                            <div class="flex flex-col">
+                                <span id="credits-display" class="text-5xl font-extrabold text-gray-900 tracking-tight transition-all duration-200">200 credits</span>
+                                <span id="price-display" class="text-2xl font-medium text-gray-500 mt-2 transition-all duration-200">$10</span>
+                            </div>
+                            <p class="mt-2 text-gray-500 font-medium">Pay as you go. No subscription.</p>
+                        </div>
+
+                        <!-- Interactive Slider -->
+                        <div class="relative w-full h-12 flex items-center mb-8">
+                            <input type="range" min="0" max="2" value="1" step="1" id="pricing-slider" 
+                                class="w-full absolute z-20 opacity-0 cursor-pointer h-full"
+                                aria-label="Pricing Slider">
                             
-                            <button id="buy-credits-btn" class="w-full sm:w-auto self-start px-8 py-4 bg-[#0ea5e9] text-white font-bold text-lg rounded-xl hover:bg-[#0284c7] transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 group hover:-translate-y-0.5">
-                                Buy Credits
-                                <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <!-- Custom Track -->
+                            <div class="w-full h-3 bg-gray-100 rounded-full relative overflow-hidden">
+                                <div id="slider-fill" class="h-full bg-[#0ea5e9] rounded-full absolute left-0 top-0 transition-all duration-300 ease-out" style="width: 50%"></div>
+                            </div>
+
+                            <!-- Custom Thumb -->
+                            <div id="slider-thumb" class="absolute h-8 w-8 bg-white border-4 border-[#0ea5e9] rounded-full shadow-lg pointer-events-none transition-all duration-300 ease-out z-10" style="left: 50%; transform: translateX(-50%)"></div>
+                            
+                            <!-- Ticks/Labels -->
+                            <div class="absolute w-full flex justify-between px-1 top-8">
+                                <div class="w-0.5 h-2 bg-gray-200"></div>
+                                <div class="w-0.5 h-2 bg-gray-200"></div>
+                                <div class="w-0.5 h-2 bg-gray-200"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-xs font-medium text-gray-400 -mt-6 mb-8 px-1">
+                            <span>Starter</span>
+                            <span>Popular</span>
+                            <span>Pro</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </button>
+                                <span><strong class="text-gray-900">Curated AI Models</strong>: Access to premium models.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Flexible Credits</strong>: No expiration date.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Secure & Private</strong>: Files processed privately.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#0ea5e9] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Universal Support</strong>: Works with all file types.</span>
+                            </li>
+                        </ul>
+
+                        <button id="buy-credits-btn" class="w-full px-8 py-4 bg-[#0ea5e9] text-white font-bold text-lg rounded-xl hover:bg-[#0284c7] transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 group hover:-translate-y-0.5">
+                            Buy Cloud Credits
+                            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Local Mode Card -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform transition-all hover:scale-105 hover:shadow-2xl duration-300 relative">
+                    <!-- Badge -->
+                    <div class="absolute top-0 right-0 bg-[#6366f1] text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                        Best Value
+                    </div>
+
+                    <div class="p-8 md:p-12 h-full flex flex-col">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 bg-indigo-100 rounded-xl">
+                                    <svg class="w-8 h-8 text-[#6366f1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Local Mode</h3>
+                            </div>
                         </div>
+
+                        <div class="mb-8">
+                            <div class="flex flex-col">
+                                <span class="text-5xl font-extrabold text-gray-900 tracking-tight">Lifetime License</span>
+                                <span class="text-2xl font-medium text-gray-500 mt-2">$15</span>
+                            </div>
+                            <p class="mt-2 text-gray-500 font-medium">One-time payment. Forever yours.</p>
+                        </div>
+
+                        <!-- Spacer to align with Cloud Mode's slider area -->
+                        <div class="h-[6.5rem] mb-8 flex items-center">
+                             <p class="text-gray-500 text-sm italic w-full text-center border-t border-b border-gray-100 py-3 bg-gray-50/50 rounded-lg">
+                                Experience true ownership and privacy.
+                            </p>
+                        </div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#6366f1] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Ultimate Privacy</strong>: Files never leave your device.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#6366f1] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Unlimited Renaming</strong>: No credit limits.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#6366f1] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Bring Your Own Model</strong>: Ollama & LM Studio.</span>
+                            </li>
+                            <li class="flex items-start text-gray-600">
+                                <svg class="w-5 h-5 text-[#6366f1] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span><strong class="text-gray-900">Hardware Accelerated</strong>: Use your GPU power.</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="window.location.href='#download'" class="w-full px-8 py-4 bg-[#6366f1] text-white font-bold text-lg rounded-xl hover:bg-[#4f46e5] transition-all shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 group hover:-translate-y-0.5">
+                            Buy Local Package
+                            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
