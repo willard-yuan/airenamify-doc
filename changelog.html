@@ -144,313 +144,297 @@
                 <!-- Timeline Container -->
                 <div class="relative border-l-2 border-gray-100 ml-4 md:ml-6 space-y-16 animate-fade-in-up" style="animation-delay: 0.1s;">
                     
-                    <!-- v1.1.2 Entry -->
-                    <div class="relative pl-8 md:pl-12">
-                        <!-- Timeline Dot -->
-                        <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-indigo-600 rounded-full shadow-sm z-10"></div>
+            <!-- v1.1.4 Entry -->
+            <div class="relative pl-8 md:pl-12">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-indigo-600 rounded-full shadow-sm z-10"></div>
+                
+                <!-- Header Row -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">v1.1.4</h2>
+                    <div class="flex items-center gap-2">
                         
-                        <!-- Header Row -->
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900">v1.1.2</h2>
-                            <div class="flex items-center gap-2">
-                                <span class="px-3 py-0.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold border border-indigo-100">
-                                    Latest
-                                </span>
-                                <span class="text-gray-400 text-sm font-medium">January 25, 2026</span>
-                            </div>
-                        </div>
-
-                        <!-- Card -->
-                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
-                            <p class="text-gray-600 mb-8 text-lg">
-                                A major polish update focusing on improved UX, cleaner UI, and better platform support.
-                            </p>
-                            
-                            <ul class="space-y-8">
-                                <!-- Feature 1: Profile Upgrades -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Profile Upgrades</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            New profile section with <strong>avatar, credits balance</strong>, and a dedicated recharge button. Plus, easily switch between Light, Dark, and System themes.
-                                        </p>
-                                    </div>
-                                </li>
-                                
-                                <!-- Feature 2: Refined UI Polish -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Refined UI Polish</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Window now <strong>opens centered</strong> and is draggable. We've also improved alignment, spacing, and visual hierarchy for a cleaner look.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <!-- Feature 3: Smaller macOS Downloads -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smaller macOS Downloads</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            We now provide separate <strong>Intel and Apple Silicon</strong> builds, significantly reducing the download size for everyone.
-                                        </p>
-                                    </div>
-                                </li>
-                                
-                                <!-- Feature 4: Dark Mode Improvements -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Dark Mode Improvements</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Refined colors and contrast for better readability and eye comfort in low-light environments.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+            <span class="px-3 py-0.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold border border-indigo-100">
+                Latest
+            </span>
+                        <span class="text-gray-400 text-sm font-medium">February 8, 2026</span>
                     </div>
-
-                    <!-- v1.1.0 Entry -->
-                    <div class="relative pl-8 md:pl-12">
-                        <!-- Timeline Dot -->
-                        <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
-                        
-                        <!-- Header Row -->
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900">v1.1.0</h2>
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-sm font-medium">January 12, 2026</span>
-                            </div>
-                        </div>
-
-                        <!-- Card -->
-                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
-                            <p class="text-gray-600 mb-8 text-lg">
-                                Elevating your experience with seamless updates, smoother authentication, and refined payments.
-                            </p>
-                            
-                            <ul class="space-y-8">
-                                <!-- Feature 1: New Update System -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">New Update System</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Get notified <strong>instantly</strong> when a new version is available. Never miss out on the latest features and improvements.
-                                        </p>
-                                    </div>
-                                </li>
-                                
-                                <!-- Feature 2: Better Auth Flow -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Better Auth Flow</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Enjoy a smoother login and registration experience with optimized workflows and faster response times.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <!-- Feature 3: Improved Payments -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Improved Payments</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Refined Stripe checkout integration ensures a secure, seamless, and hassle-free payment experience.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- v1.0.9 Entry -->
-                    <div class="relative pl-8 md:pl-12">
-                        <!-- Timeline Dot -->
-                        <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
-                        
-                        <!-- Header Row -->
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900">v1.0.9</h2>
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-sm font-medium">January 10, 2026</span>
-                            </div>
-                        </div>
-
-                        <!-- Card -->
-                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
-                            <p class="text-gray-600 mb-8 text-lg">
-                                Empowering Perfection & Rock-Solid Stability. This update puts you in complete control and ensures a smoother experience.
-                            </p>
-                            
-                            <ul class="space-y-8">
-                                <!-- Feature 1: Instant Re-generation -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Instant Re-generation</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Not happy with a suggestion? Click the new <strong>Regenerate icon</strong> to instantly try again until you get the perfect name.
-                                        </p>
-                                    </div>
-                                </li>
-                                
-                                <!-- Feature 2: Smart History Sync -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smart History Sync</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Your renaming history is now captured <strong>immediately</strong> upon generation and seamlessly merged across your local and cloud sessions.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <!-- Performance & Improvements -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Performance & Improvements</h3>
-                                        <ul class="list-disc list-inside text-gray-600 leading-relaxed text-base space-y-1">
-                                            <li><strong>Faster Launch:</strong> Optimized app startup time by implementing lazy loading for core services.</li>
-                                            <li><strong>Leaner Footprint:</strong> Reduced application size by removing unused dependencies.</li>
-                                            <li><strong>Stability Guard:</strong> Added a smart timeout protection—say goodbye to the eternal "Thinking..." spinner.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <!-- Fixes -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Fixes</h3>
-                                        <ul class="list-disc list-inside text-gray-600 leading-relaxed text-base space-y-1">
-                                            <li><strong>Cross-Platform Polish:</strong> Enhanced path handling for better compatibility across macOS and Windows.</li>
-                                            <li><strong>UI Responsiveness:</strong> Fixed progress bar stalls and credit display delays.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- v1.0.8 Entry -->
-                    <div class="relative pl-8 md:pl-12">
-                        <!-- Timeline Dot -->
-                        <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
-                        
-                        <!-- Header Row -->
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900">v1.0.8</h2>
-                            <div class="flex items-center gap-2">
-                                <span class="text-gray-400 text-sm font-medium">December 28, 2025</span>
-                            </div>
-                        </div>
-
-                        <!-- Card -->
-                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
-                            <ul class="space-y-8">
-                                <!-- Item 1 -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smart History Layout</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Improved clarity with middle-truncation, tooltips, and fixed row heights for long filenames.
-                                        </p>
-                                    </div>
-                                </li>
-                                
-                                <!-- Item 2 -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Enhanced Visual Hierarchy</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Highlighted renaming results with professional typography and simplified date formats.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <!-- Item 3 -->
-                                <li class="flex items-start group">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Polished UI Components</h3>
-                                        <p class="text-gray-600 leading-relaxed text-base">
-                                            Modernized Credit badges and intelligent pagination that auto-hides when not needed.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                    <p class="text-gray-600 mb-8 text-lg">
+                        A milestone update introducing Local Mode and enhanced payment flexibility.
+                    </p>
+                    
+                    <ul class="space-y-8">
+                        
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Local Mode & Lifetime</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Added full support for <strong>Local Mode</strong> and direct in-app purchase of <strong>Lifetime Licenses</strong>, giving you complete ownership and privacy.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Profile UI Polish</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Refined the <strong>Profile page UI</strong> for a cleaner, more modern look and smoother interactions.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Payment Stability</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Significantly improved <strong>Stripe payment stability</strong> to ensure secure and reliable transactions every time.
+                        </p>
+                    </div>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+
+
+            <!-- v1.1.3 Entry -->
+            <div class="relative pl-8 md:pl-12">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
+                
+                <!-- Header Row -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">v1.1.3</h2>
+                    <div class="flex items-center gap-2">
+                        
+                        <span class="text-gray-400 text-sm font-medium">February 1, 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Focusing on cross-platform compatibility and core performance improvements.
+                    </p>
+                    
+                    <ul class="space-y-8">
+                        
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Core & Performance</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Improved <strong>file type recognition</strong> accuracy and reduced <strong>installer size</strong> for a lighter, faster experience.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Platform Stability</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Expanded support to both <strong>Windows and macOS</strong>, plus fixed critical <strong>macOS auto-update</strong> issues for seamless upgrades.
+                        </p>
+                    </div>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+
+
+            <!-- v1.1.2 Entry -->
+            <div class="relative pl-8 md:pl-12">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
+                
+                <!-- Header Row -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">v1.1.2</h2>
+                    <div class="flex items-center gap-2">
+                        
+                        <span class="text-gray-400 text-sm font-medium">January 25, 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                    <p class="text-gray-600 mb-8 text-lg">
+                        A major polish update focusing on improved UX, cleaner UI, and better platform support.
+                    </p>
+                    
+                    <ul class="space-y-8">
+                        
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Profile Upgrades</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            New profile section with <strong>avatar, credits balance</strong>, and a dedicated recharge button. Plus, easily switch between Light, Dark, and System themes.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Refined UI Polish</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Window now <strong>opens centered</strong> and is draggable. We've also improved alignment, spacing, and visual hierarchy for a cleaner look.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Smaller macOS Downloads</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            We now provide separate <strong>Intel and Apple Silicon</strong> builds, significantly reducing the download size for everyone.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Dark Mode Improvements</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Refined colors and contrast for better readability and eye comfort in low-light environments.
+                        </p>
+                    </div>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+
+
+            <!-- v1.1.0 Entry -->
+            <div class="relative pl-8 md:pl-12">
+                <!-- Timeline Dot -->
+                <div class="absolute -left-[9px] top-1.5 w-5 h-5 bg-white border-4 border-blue-500 rounded-full shadow-sm z-10"></div>
+                
+                <!-- Header Row -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-3 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">v1.1.0</h2>
+                    <div class="flex items-center gap-2">
+                        
+                        <span class="text-gray-400 text-sm font-medium">January 12, 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Elevating your experience with seamless updates, smoother authentication, and refined payments.
+                    </p>
+                    
+                    <ul class="space-y-8">
+                        
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">New Update System</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Get notified <strong>instantly</strong> when a new version is available. Never miss out on the latest features and improvements.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Better Auth Flow</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Enjoy a smoother login and registration experience with optimized workflows and faster response times.
+                        </p>
+                    </div>
+                </li>
+            
+
+                <li class="flex items-start group">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mr-5 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Improved Payments</h3>
+                        <p class="text-gray-600 leading-relaxed text-base">
+                            Refined Stripe checkout integration ensures a secure, seamless, and hassle-free payment experience.
+                        </p>
+                    </div>
+                </li>
+            
+                    </ul>
+                </div>
+            </div>
+        
+                </div>
+
             </div>
         </section>
     </main>

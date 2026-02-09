@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff">
+    <title>Changelog - AiRenamify</title>
+    <meta name="description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta name="author" content="Willard Yuan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://airenamify.com/changelog.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://airenamify.com/changelog.html" />
+    <meta property="og:title" content="Changelog - AiRenamify" />
+    <meta property="og:description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta property="og:image" content="https://airenamify.com/images/airenamify_homepage.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://airenamify.com/changelog.html" />
+    <meta property="twitter:title" content="Changelog - AiRenamify" />
+    <meta property="twitter:description" content="Latest updates, features, and improvements for AiRenamify." />
+    <meta property="twitter:image" content="https://airenamify.com/images/airenamify_homepage.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    
+    <style>
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
+    </style>
+</head>
+<body class="font-sans text-text-main bg-background antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Sticky Glass) -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img class="h-10 w-10" src="images/icon.png" alt="AiRenamify Logo">
+                    <span class="font-extrabold text-2xl tracking-tight text-gray-900">AiRenamify</span>
+                </a>
+                
+                <!-- Centered Desktop Menu -->
+                <div id="nav-links-container" class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center space-x-1 p-1">
+                    <div id="nav-pill" class="absolute bg-gray-100 rounded-full -z-10 transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] opacity-0 pointer-events-none"></div>
+
+                    <a href="index.html#features" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">Features</a>
+                    <a href="index.html#how-it-works" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">How it Works</a>
+                    <a href="index.html#pricing" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">Pricing</a>
+                    <a href="index.html#faq" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">FAQ</a>
+                    <a href="blog.html" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">Blog</a>
+                    <a href="changelog.html" id="nav-changelog" class="nav-item text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors relative z-10">Changelog</a>
+                    
+                    <!-- Community Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-item flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-full transition-colors focus:outline-none relative z-10">
+                            Community
+                            <svg class="w-4 h-4 ml-1 text-gray-500 group-hover:text-gray-700 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-lg ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-1.5">
+                            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/Sm9YkUrX" class="flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 mr-3 fill-current text-[#5865F2]"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.5328-9.748-3.5816-14.1414a.0742.0742 0 00-.032-.0277zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1569 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z"></path></svg>
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://x.com/i/lists/2009908608449032490" class="flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 mr-3 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                Twitter / X
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/willard-yuan/airenamify-releases/releases" class="flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 mr-3 fill-current"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="index.html#download" 
+                       data-umami-event="Download_Click"
+                       data-umami-event-location="Navbar"
+                       data-umami-event-platform="Anchor"
+                       class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-semibold rounded-full text-white bg-[#2ecc71] hover:bg-[#27ae60] shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <section class="relative pt-32 pb-24 overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <!-- Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+                        Changelog
+                    </h1>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+                        Track the latest updates and improvements to AiRenamify.
+                    </p>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-gray-100 ml-4 md:ml-6 space-y-16 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    {{CHANGELOG_TIMELINE}}
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <img class="h-6 w-6 grayscale opacity-50" src="images/icon.png" alt="Logo">
+                <span class="text-gray-400 text-sm">© 2026 AiRenamify</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://x.com/i/lists/2009908608449032490" class="text-gray-400 hover:text-gray-900 transition-colors">Twitter</a>
+                <a href="https://discord.gg/Sm9YkUrX" class="text-gray-400 hover:text-gray-900 transition-colors">Discord</a>
+                <a href="https://github.com/willard-yuan/airenamify-releases/releases" class="text-gray-400 hover:text-gray-900 transition-colors">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Terms</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav Pill Logic
+        const navContainer = document.getElementById('nav-links-container');
+        const navPill = document.getElementById('nav-pill');
+        const navItems = document.querySelectorAll('.nav-item');
+        const changelogLink = document.getElementById('nav-changelog');
+        
+        // Set default active item to Changelog
+        let activeItem = changelogLink;
+        let isHovering = false;
+
+        function movePillTo(element) {
+            if (!element) {
+                navPill.style.opacity = '0';
+                return;
+            }
+            const rect = element.getBoundingClientRect();
+            const containerRect = navContainer.getBoundingClientRect();
+            
+            navPill.style.width = `${rect.width}px`;
+            navPill.style.height = `${rect.height}px`;
+            navPill.style.transform = `translate(${rect.left - containerRect.left}px, ${rect.top - containerRect.top}px)`;
+            navPill.style.opacity = '1';
+        }
+
+        // Initialize pill position
+        if (activeItem) {
+            setTimeout(() => movePillTo(activeItem), 100);
+            activeItem.classList.remove('text-gray-700');
+            activeItem.classList.add('text-gray-900');
+        }
+
+        // Hover Events
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                isHovering = true;
+                movePillTo(item);
+            });
+        });
+
+        navContainer.addEventListener('mouseleave', () => {
+            isHovering = false;
+            movePillTo(activeItem);
+        });
+    </script>
+</body>
+</html>
